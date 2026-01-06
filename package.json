@@ -15,10 +15,12 @@
   "license": "ISC",
   "packageManager": "pnpm@10.18.2",
   "dependencies": {
+    "@arcraiders/data": "github:jaredhandra/arcraiders-data",
     "@modelcontextprotocol/sdk": "^1.25.1"
   },
   "devDependencies": {
     "@types/node": "^25.0.3",
+    "prettier": "^3.7.4",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
