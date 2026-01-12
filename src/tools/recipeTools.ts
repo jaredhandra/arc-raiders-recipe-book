@@ -1,4 +1,4 @@
-import { GameItem, loadItems } from "../data";
+import { GameItem, loadItems } from "../data.js";
 
 /**
  * Tool definition for retrieving a specific item by its ID.

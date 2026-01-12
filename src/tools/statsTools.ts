@@ -1,4 +1,4 @@
-import { GameItem, loadItems, RecipeIngredients } from "../data";
+import { GameItem, loadItems, RecipeIngredients } from "../data.js";
 
 /**
  * Tool definition for retrieving items grouped by type.

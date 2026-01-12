@@ -1,4 +1,4 @@
-export { handleSearchItems, searchItemsTool } from "./searchTools";
+export { handleSearchItems, searchItemsTool } from "./searchTools.js";
 
 export {
   getCraftingChainTool,
@@ -7,7 +7,7 @@ export {
   handleGetCraftingChain,
   handleGetItem,
   handleGetRecipe,
-} from "./recipeTools";
+} from "./recipeTools.js";
 
 export {
   compareItemsTool,
@@ -18,4 +18,4 @@ export {
   handleGetItemsByRarity,
   handleGetItemsByType,
   handleGetRecyclingValue,
-} from "./statsTools";
+} from "./statsTools.js";

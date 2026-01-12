@@ -64,21 +64,15 @@ export interface GameItem {
   salvagesInto?: RecipeIngredients;
 }
 
-import path from "path";
-
-// Path to your JSON file
-const ITEMS_FILE = path.join(process.cwd(), "items.json");
+import * as AllItems from "@arcraiders/data";
 
 let cachedItems: GameItem[] | null = null;
 
 /**
- * Loads all game items from the data source.
+ * Loads all game items from the @arcraiders/data library.
  * Items are cached in memory after the first call for performance.
  *
  * @returns {GameItem[]} Array of all available game items
- * @note Currently returns an empty array as placeholder. Integrate with @arcraiders/data package
- *       or load from items.json file in production.
- *
  * @example
  * const items = loadItems();
  * const adrenalineShot = items.find(item => item.id === 'adrenaline_shot');
@@ -89,11 +83,20 @@ export function loadItems(): GameItem[] {
   }
 
   try {
-    // Note: This is a sync fallback. In production, load async and cache on startup
-    // For now, return empty array as placeholder
-    return [];
+    // Collect all item exports from the library
+    const items: GameItem[] = [];
+
+    Object.entries(AllItems).forEach(([key, value]) => {
+      // Skip type definitions and non-object exports
+      if (typeof value === "object" && value !== null && "id" in value) {
+        items.push(value as GameItem);
+      }
+    });
+
+    cachedItems = items;
+    return cachedItems;
   } catch (error) {
-    console.error("Error loading items:", error);
+    console.error("Error loading items from @arcraiders/data:", error);
     return [];
   }
 }

@@ -1,6 +1,7 @@
 {
   "name": "arc-raiders-recipe-book",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +16,7 @@
   "license": "ISC",
   "packageManager": "pnpm@10.18.2",
   "dependencies": {
-    "@arcraiders/data": "github:jaredhandra/arcraiders-data",
+    "@arcraiders/data": "github:jaredhandra/arcraiders-data#1.0.4",
     "@modelcontextprotocol/sdk": "^1.25.1"
   },
   "devDependencies": {

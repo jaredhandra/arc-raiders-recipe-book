@@ -1,4 +1,4 @@
-import { GameItem, loadItems } from "../data";
+import { GameItem, loadItems } from "../data.js";
 
 /**
  * Tool definition for searching items in the Arc Raiders database with various filters.
